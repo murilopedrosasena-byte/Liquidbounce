@@ -165,3 +165,8 @@ jobs:
         if: success() || failure()
         with:
           sarif_file: build/reports/detekt/detekt.sarif
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: liquidbounce-jar
+          path: build/libs/*.jar
